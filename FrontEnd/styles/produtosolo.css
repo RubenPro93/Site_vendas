@@ -1,0 +1,136 @@
+/* Define a cor de fundo e a fonte usada no body */
+body {
+    background-color: #EAEAEA;
+}
+
+/* Aplica uma margem ao container das imagens do produto */
+.product-image--container {
+    margin: 1rem;
+}
+
+/* Ajeita a imagem de maior visibilidade, tamanho padrao para todas */
+.product-image--featured{
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.856);
+    width: 100%;
+    height: 500px;
+    border: 1px rgb(175, 175, 175) solid;
+}
+
+/*imagem menor */
+.product-image--item{
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(255, 255, 255);
+    width: 160px;
+    height: 100px;
+    border: 1px rgb(133, 133, 133) solid;
+}
+
+.back-arrow{
+    margin-top: 10px;
+    height: 47px;
+}
+.titulo-margin{
+    margin-top: 70px;
+}
+
+/* Estiliza o botão de voltar */
+.botao-voltar {
+    background: transparent;
+    font-size: xx-small; 
+    color: transparent; 
+    margin-left: 0px; 
+    width: 58px; 
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    color: chartreuse;
+    font-size: 24px;
+}
+.titulo-margin{
+    margin-top: 165px;
+}
+
+  
+  .botao-voltar:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  .botao-div {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+/* Aplica estilos ao botão de voltar quando o mouse está sobre ele */
+.botao-voltar:hover {
+    background-color: transparent;
+    color: #87ab68;
+}
+
+/* Remove o padding da lista de imagens do produto */
+.product-image--list {
+    padding: 0;
+    border: 1px rgb(216, 216, 216) solid;
+}
+
+/* Aplica estilos aos itens da lista de imagens do produto */
+.product-image--list li {
+    margin: 0 5px; 
+    border: 2px solid #eaeaea; 
+    border-radius: 5px; 
+    transition: all ease 0.25s; 
+}
+
+/* Aplica estilos aos itens da lista de imagens do produto que estão selecionados */
+.product-image--list li.item-selected {
+    box-shadow: 1px 1px 1px #888888;
+    border: 2px solid #FFC500; 
+}
+
+/* Destaca o preço do produto */
+.emphasize {
+    color:chartreuse;
+    font-size: 1.5em;
+    letter-spacing: -2px;
+}
+
+/* Aplica estilos ao botão de adicionar ao carrinho */
+.my-btn {
+    border-radius: 5px; 
+    width: 100%; 
+    height: 50px; 
+    transition: all ease 0.25s; 
+}
+
+/* Aplica estilos ao botão de adicionar ao carrinho quando o mouse está sobre ele */
+.my-btn:hover {
+    box-shadow: 1px 1px 1px #888888; 
+}
+
+/* Cria um container flexível para alinhar itens verticalmente */
+.flex-btn {
+    display: flex;
+    align-items: center;
+}
+
+/* Aplica estilos ao ícone do carrinho */
+.cart-icon {
+    margin: 2px; 
+    width: 30px; 
+    height: 30px; 
+}
+
+/* Aplica estilos ao texto do botão de adicionar ao carrinho */
+.btn-text {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 0 auto; 
+}

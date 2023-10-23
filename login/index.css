@@ -1,0 +1,28 @@
+
+.centralize form{
+    width: 300px;
+}
+
+.centralize p{
+    color: green;
+}
+
+  
+
+h1 {
+    text-align: center ;
+    text-decoration: underline;
+    font-size: 40px; 
+}
+
+.imagem-circular{
+    width: 175px;
+    height: auto;
+    overflow: hidden;
+  }
+  
+.imagem-circular img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} 

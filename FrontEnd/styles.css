@@ -1,0 +1,181 @@
+/* ICON sair e ICON de logado*/
+.fa-right-from-bracket{
+  width: 30px;
+  height: 20px;
+  color: red;
+}
+.botao-sair{
+  background: none;
+  border: none;
+}
+
+
+/*Editar nav altura*/
+.nav-item2{
+  font-size: 25px;
+  font-family: 'Bebas Neue', sans-serif;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+/* Esta seção define as cores de fundo e de texto para as classes .produtos, .AdicionarCorFooter e os links dentro de .nav-item2 */
+.produtos, .AdicionarCorFooter, .nav-item2 a{
+  background-color: black!important;
+  color: rgba(236, 236, 236, 0.856)!important;
+}
+.produtos-letra:hover{
+  color: #1eff00!important;
+}
+
+
+/* Esta seção define o estilo das miniaturas das imagens */
+.thumbnail {
+object-fit: cover;
+background-color: white;
+width: 280px; 
+height: 200px; 
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+transform: scale(1);
+}
+
+/** Organizar todo o site (footer no final) */
+html {
+  height: 100%;
+  min-height: 100%;
+}
+body {
+  background-image: url(img/back.png);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+.container, .centralize{
+  flex-grow: 1;
+}
+
+.AdicionarCorFooter{
+  margin-top: 2%!important;
+}
+
+
+/* ------------- CARDS ---------------------- */
+/* Esta seção define o estilo geral dos cards */
+.card {
+
+  height: 450px; /* Ajuste este valor conforme necessário */
+  max-width: 300px;
+  width: 80vw; 
+  margin: auto; 
+  margin-top: 5%;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  
+}
+
+
+
+
+/* Esta seção define a sombra do card quando o mouse está sobre ele */
+.card:hover {
+box-shadow: 0 8px 16px 0 rgba(70, 70, 70, 0.2);
+}
+
+/* Esta seção define o estilo da parte superior das imagens nos cards */
+.card-img-top {
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+}
+
+/* Esta seção define o estilo do corpo do card */
+.card-body {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 194px;
+
+}
+
+
+/* Esta seção define o estilo do título do card */
+.card-title {
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 5px;
+}
+
+/* Esta seção define o estilo do texto do card */
+.card-text {
+font-size: 14px;
+color: #666;
+text-align: center;
+margin-top: 5px;
+}
+
+.preco-text{
+  font-size: 20px;
+  color: black;
+}
+
+
+
+
+/* Esta seção define o estilo da lista de ingredientes do card */
+.card-ingredients {
+font-size: 14px;
+color: #888;
+text-align: center;
+margin-bottom: 0;
+height: 50px;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+/* Esta seção remove a sombra do foco no botão primário quando focado, ativo ou clicado */
+.btn-primary:focus,
+.btn-primary:active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+box-shadow: none;
+}
+
+.carousel-control-next, .carousel-control-prev {
+  height: 200px;
+  
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  background-color: #5658558d;
+}
+/* css para pagina de index --> pagina index.html botao login */
+header button {
+  background-color: red;
+  width: auto;
+}
+
+header {
+  text-align: right;
+}
+
+
+/*  admin */
+.hide-content {
+  display: none;
+}
+
+
+.initially-hidden {
+  display: none;
+}
+
+
+.preco-produto{
+  margin-top: 10px;
+}
+

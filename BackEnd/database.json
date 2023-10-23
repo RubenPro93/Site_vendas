@@ -1,0 +1,324 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Caneta Esferográfica",
+      "description": "Caneta de tinta esferográfica de alta qualidade, com ponta durável e tinta de secagem rápida. Perfeita para escrever de forma suave e sem borrões.",
+      "category": "suprimentos_de_escritorio",
+      "price": "2.99",
+      "images": [
+        "https://img.ltwebstatic.com/images3_pi/2022/07/11/16575102741a4235326c8d93637db184f44bcc6493.webp",
+        "https://img.ltwebstatic.com/images3_pi/2022/07/11/165751027762d084ef130ef8b9f06b35ec8d1331cd.webp",
+        "https://img.ltwebstatic.com/images3_pi/2022/07/11/1657510280660f0b361886b3a85aabc1de85d213dd.webp",
+        "https://img.ltwebstatic.com/images3_pi/2023/03/06/16780662154f199b5c07e57807873e446677381839.webp"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Caderno de Anotações",
+      "description": "Caderno com capa dura e folhas pautadas, ideal para fazer anotações, tomar notas em reuniões ou escrever ideias. Tamanho compacto, fácil de transportar.",
+      "category": "suprimentos_de_escritorio",
+      "price": "12.99",
+      "images": [
+        "https://img.ltwebstatic.com/images3_pi/2023/03/16/16789562588cbd5b019224bc1e20ec790f7954ba8e.webp",
+        "https://img.ltwebstatic.com/images3_pi/2022/08/04/16595740385d53e75147bfc2ad9e5b81c6ebd02917.webp",
+        "https://img.ltwebstatic.com/images3_pi/2022/08/04/1659574040873f8bc2b605784bdfa6f14032602c5d.webp",
+        "https://img.ltwebstatic.com/images3_pi/2022/08/04/1659574036a9006f20b0d77e89329302e863275577.webp"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Organizador de Mesa",
+      "description": "Organizador de mesa com vários compartimentos para armazenar canetas, clips, borrachas e outros itens de escritório. Mantenha sua mesa organizada e seus materiais ao alcance das mãos.",
+      "category": "suprimentos_de_escritorio",
+      "price": "5.99",
+      "images": [
+        "https://img.ltwebstatic.com/images3_pi/2022/11/01/1667274054e05815f9cf4298c3a7d0f7f2c74a6b29.webp",
+        "https://img.ltwebstatic.com/images3_pi/2022/11/05/1667657942a66461bf3b6634de5e63b6b80bc4ba08.webp",
+        "https://img.ltwebstatic.com/images3_pi/2023/02/28/1677571495795d802b0f4ba5df63e540ae9c59f649.webp",
+        "https://img.ltwebstatic.com/images3_pi/2022/11/05/1667657944e0fcc9e9c472a4ff37640a52b40d6bdd.webp"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Calculadora de Mesa",
+      "description": "Calculadora de mesa com visor amplo e teclas grandes, perfeita para cálculos rápidos e precisos. Possui funções básicas e avançadas.",
+      "category": "suprimentos_de_escritorio",
+      "price": "8.00",
+      "images": [
+        "https://img.ltwebstatic.com/images3_spmp/2023/04/20/168195636669e8d3248110aa7273510bf9f7a8d406.jpg",
+        "https://img.ltwebstatic.com/images3_spmp/2023/04/20/16819563677affe0df263779d47a7908e8f83e4ef5.jpg",
+        "https://img.ltwebstatic.com/images3_spmp/2023/04/20/1681956368ecba89f260e40e72a6cecc3c764e6f08.jpg",
+        "https://img.ltwebstatic.com/images3_spmp/2023/04/20/1681958736a8ff2c1dcbe38a2cb629416c14ae8fa4.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Grampeador",
+      "description": "Grampeador metálico resistente, capaz de grampear várias folhas de papel de uma vez. Ideal para uso diário no escritório.",
+      "category": "suprimentos_de_escritorio",
+      "price": "6.00",
+      "images": [
+        "https://img.ltwebstatic.com/images3_pi/2023/03/13/1678691939a7d027142afe664b0dbc635b4efd27eb.webp",
+        "https://img.ltwebstatic.com/images3_pi/2023/03/13/16786919403da236487e211328cb794fb7c66fb80a.webp",
+        "https://img.ltwebstatic.com/images3_pi/2023/03/13/1678691943021cc2a901f1c011ad2dcd3db7faa42a.webp",
+        "https://img.ltwebstatic.com/images3_pi/2023/03/13/167869194794be74d7e083928345bc4e5300f7e1de.webp"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Bloco de Notas Colante",
+      "description": "Bloco de notas autoadesivas em várias cores, perfeito para fazer lembretes, marcar páginas ou destacar informações importantes. Fácil de remover e reposicionar.",
+      "category": "suprimentos_de_escritorio",
+      "price": "2.98",
+      "images": [
+        "https://img.ltwebstatic.com/images3_spmp/2023/06/21/1687336303788b324d6be31d7bccf782a66a3d9e3a_square.jpg",
+        "https://img.ltwebstatic.com/images3_spmp/2023/06/21/16873363030e629c9d71c8142dc01831c58dc65319_square.jpg",
+        "https://img.ltwebstatic.com/images3_spmp/2023/06/21/1687336308d4994c4a8b9d7162c9a82eabd8c47b79_square.jpg",
+        "https://img.ltwebstatic.com/images3_spmp/2023/06/21/1687336308d45902abd9474c6c4c7f8b07e75eaa53_square.jpg"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Mesa de Escritório",
+      "description": "Mesa espaçosa com design moderno, perfeita para o seu escritório. Possui amplo espaço para colocar computador, documentos e outros itens essenciais.",
+      "category": "moveis",
+      "price": "99.99",
+      "images": [
+        "https://statics.venca.com/web/img/products/MKP000248730_10356451_PL_20220812105552_0_xl.webp",
+        "https://statics.venca.com/web/img/products/MKP000248730_10356451_FR_20220812105552_1_xl.webp",
+        "https://statics.venca.com/web/img/products/MKP000248730_10356451_TL_20220812105552_2_xl.webp",
+        "https://statics.venca.com/web/img/products/MKP000248730_10356451_BK_20220812105552_4_xl.webp"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Cadeira Executiva",
+      "description": "Cadeira ergonômica com encosto ajustável, apoio para os braços e estofamento confortável. Proporciona suporte adequado e conforto durante longas horas de trabalho.",
+      "category": "moveis",
+      "price": "71.99",
+      "images": [
+        "https://cdn1.vente-unique.com/thumbnails/product/54/54154/product_raw/xs/cadeirao-de-escritorio_264835.jpg",
+        "https://cdn1.vente-unique.com/thumbnails/product/54/54154/product_raw/xs/cadeirao-de-escritorio_270703.jpg",
+        "https://cdn1.vente-unique.com/thumbnails/product/54/54154/product_raw/xs/cadeirao-de-escritorio_264841.jpg",
+        "https://cdn1.vente-unique.com/thumbnails/product/54/54154/product_raw/xs/cadeirao-de-escritorio_264843.jpg"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Armário para Arquivos",
+      "description": "Armário com gavetas para organizar e armazenar arquivos e documentos importantes. Possui fechadura para garantir a segurança dos seus registros.",
+      "category": "moveis",
+      "price": "239.99",
+      "images": [
+        "https://prod-metro-markets.imgix.net/item_image/ec98e233-27ed-4923-842e-b63d84dc1546?auto=format,compress",
+        "https://prod-metro-markets.imgix.net/item_image/266cb8a8-d53e-4b40-b7fd-a4ec441bb79f?auto=format,compress",
+        "https://prod-metro-markets.imgix.net/item_image/f5cf7186-a974-449b-864a-6d6f83c9076c?auto=format,compress",
+        "https://prod-metro-markets.imgix.net/item_image/ae5472d5-e983-4071-b13b-7a3fb62b5d4f?auto=format,compress"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Prateleira Flutuante",
+      "description": "Prateleira flutuante para exibir itens decorativos ou organizar materiais de escritório. Economiza espaço e adiciona um toque moderno ao ambiente.",
+      "category": "moveis",
+      "price": "12.59",
+      "images": [
+        "https://artplanet.pt/wp-content/uploads/2021/10/Prateleira-de-parede-R%C3%BAstica_artplanet2.jpg",
+        "https://artplanet.pt/wp-content/uploads/2021/10/Prateleira-de-parede-R%C3%BAstica_artplanet4.jpg",
+        "https://artplanet.pt/wp-content/uploads/2021/10/Prateleira-de-parede-R%C3%BAstica_artplanet1.jpg",
+        "https://artplanet.pt/wp-content/uploads/2021/10/Prateleira-de-parede-R%C3%BAstica_artplanet5.jpg"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Gaveteiro com Rodinhas",
+      "description": "Gaveteiro compacto com rodinhas para facilitar a movimentação. Possui gavetas para armazenar documentos, materiais de escritório e outros itens essenciais.",
+      "category": "moveis",
+      "price": "149.90",
+      "images": [
+        "https://maiscasa.pt/wp-content/uploads/0e9370d33fd4ba79022fdc59c325481a-1.jpg",
+        "https://maiscasa.pt/wp-content/uploads/45b31fd9d41258a2d679e81a09628f52.jpg",
+        "https://maiscasa.pt/wp-content/uploads/437449571284aaea0b9cd82bac64a050.jpg",
+        "https://maiscasa.pt/wp-content/uploads/777b49518374594fe3cc8ad14f3d168f.jpg"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Escrivaninha com Estante",
+      "description": "Escrivaninha com estante integrada para aproveitar ao máximo o espaço do escritório. Perfeita para quem precisa de espaço extra para armazenar livros e documentos.",
+      "category": "moveis",
+      "price": "239.90",
+      "images": [
+        "https://maiscasa.pt/wp-content/uploads/2a69afed02915c6892182178072f011e-1.jpg",
+        "https://maiscasa.pt/wp-content/uploads/16d770a7c650b946e1656428359bea68.jpg",
+        "https://maiscasa.pt/wp-content/uploads/2bbc9cbddb64cf26e86eaeb5da6f26ba.jpg",
+        "https://maiscasa.pt/wp-content/uploads/80fbaabd012c765b7462118955781c40.jpg"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Computador Desktop",
+      "description": "Computador de mesa de alta performance, ideal para tarefas exigentes no escritório. Possui processador rápido, memória ampla e espaço de armazenamento generoso.",
+      "category": "eletronicos",
+      "price": "833.12",
+      "images": [
+        "https://m.media-amazon.com/images/I/71F2d-kmsXL._AC_SX679_.jpg",
+        "https://m.media-amazon.com/images/I/31EyHAWF0QL._AC_.jpg",
+        "https://m.media-amazon.com/images/I/518bXNfEZKL._AC_SX522_.jpg",
+        "https://m.media-amazon.com/images/I/5104U1JdM9L._AC_.jpg"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Impressora Multifuncional",
+      "description": "Impressora que também pode funcionar como copiadora, scanner e fax. Ideal para ambientes de escritório que precisam de diversas funcionalidades em um único dispositivo.",
+      "category": "eletronicos",
+      "price": "215.25",
+      "images": [
+        "https://www.tradeinn.com/f/13845/138454741_2/epson-impressora-multifuncional-expresion-home-xp-4150.jpg",
+        "https://www.tradeinn.com/f/13845/138454741_5/epson-impressora-multifuncional-expresion-home-xp-4150.jpg",
+        "https://www.tradeinn.com/f/13845/138454741_2/epson-impressora-multifuncional-expresion-home-xp-4150.jpg",
+        "https://www.tradeinn.com/f/13845/138454741_5/epson-impressora-multifuncional-expresion-home-xp-4150.jpg"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Headset com Microfone",
+      "description": "Headset com qualidade de som excepcional e microfone integrado. Perfeito para videoconferências, chamadas e ouvir música durante o trabalho.",
+      "category": "eletronicos",
+      "price": "69.99",
+      "images": [
+        "https://cdn.awsli.com.br/600x1000/2488/2488327/produto/180909698364f7de71f.jpg",
+        "https://cdn.awsli.com.br/600x1000/2488/2488327/produto/18090969864572ca2af.jpg",
+        "https://cdn.awsli.com.br/600x1000/2488/2488327/produto/18090969882d9c35608.jpg",
+        "https://cdn.awsli.com.br/600x1000/2488/2488327/produto/180909698e9c102ddca.jpg"
+      ]
+    },
+    {
+      "id": 16,
+      "thumbnail": "https://m.media-amazon.com/images/I/61utUE-AliL._AC_SX679_.jpg",
+      "title": "Roteador Wi-Fi",
+      "description": "Roteador de alta velocidade para fornecer conexão Wi-Fi confiável e estável no escritório. Permite que vários dispositivos se conectem à internet simultaneamente.",
+      "category": "eletronicos",
+      "price": "199.99",
+      "images": [
+        "https://m.media-amazon.com/images/I/61utUE-AliL._AC_SX679_.jpg",
+        "https://m.media-amazon.com/images/I/71LKapXh+uL._AC_SX522_.jpg",
+        "https://m.media-amazon.com/images/I/71eRt9GdZ1L._AC_SX522_.jpg",
+        "https://m.media-amazon.com/images/I/71sQKRcLnPL._AC_SX522_.jpg"
+      ]
+    },
+    {
+      "id": 17,
+      "thumbnail": "https://m.media-amazon.com/images/I/81LomyNT05S._AC_SX679_.jpg",
+      "title": "Caixas de Som",
+      "description": "Conjunto de caixas de som com áudio de alta qualidade para melhorar a experiência de som no escritório. Perfeito para reproduzir música, vídeos e chamadas com clareza.",
+      "category": "eletronicos",
+      "price": "18.83",
+      "images": [
+        "https://m.media-amazon.com/images/I/81LomyNT05S._AC_SX679_.jpg",
+        "https://m.media-amazon.com/images/I/81OFNhJRJcL._AC_SX522_.jpg",
+        "https://m.media-amazon.com/images/I/81yKNcbXxkL._AC_SX522_.jpg",
+        "https://m.media-amazon.com/images/I/81hylAU1UWL._AC_SX522_.jpg"
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Webcam 1080P ",
+      "description": "Webcam de alta definição para videoconferências e chamadas de vídeo. Possui microfone integrado e recursos de cancelamento de ruído para uma comunicação clara.",
+      "category": "eletronicos",
+      "price": "28.45",
+      "images": [
+        "https://m.media-amazon.com/images/I/71EjE-OrQ4L._AC_SX679_.jpg",
+        "https://m.media-amazon.com/images/I/71gAZLJ8KkL._AC_SX522_.jpg",
+        "https://m.media-amazon.com/images/I/71q0OWSGOuL._AC_SX522_.jpg",
+        "https://m.media-amazon.com/images/I/815ZdgVnrCL._AC_SX522_.jpg"
+      ]
+    },
+    {
+      "id": 19,
+      "thumbnail": "https://img.ltwebstatic.com/images3_pi/2022/12/20/167150517249445d6b8a5c9b8141ac7e7f7cdab833_thumbnail_600x.jpg",
+      "title": "Organizador de Cabos",
+      "description": "Organizador de cabos para manter os fios do computador, carregadores e outros dispositivos eletrônicos organizados e livres de emaranhados. Fácil de usar e de instalar.",
+      "category": "promocoes",
+      "price": "2.50",
+      "images": [
+        "https://img.ltwebstatic.com/images3_pi/2022/12/20/167150517249445d6b8a5c9b8141ac7e7f7cdab833_thumbnail_600x.jpg",
+        "https://img.ltwebstatic.com/images3_pi/2022/12/20/16715051751be2a6219863c04989f6b7665c415461_thumbnail_600x.webp",
+        "https://img.ltwebstatic.com/images3_pi/2022/12/20/1671505176a6b3fbac79f2a1b1994f1056461d6c62_thumbnail_600x.webp",
+        "https://img.ltwebstatic.com/images3_pi/2022/12/20/1671505179b18cefe1f9b936b13180261acde2c0a6_thumbnail_600x.webp"
+      ]
+    },
+    {
+      "id": 20,
+      "thumbnail": "https://cdn.sklum.com/pt/wk/1607169/abajur-deyan.jpg?cf-resize=gallery",
+      "title": "Luminária de Mesa",
+      "description": "Luminária de mesa com ajuste de intensidade",
+      "category": "promocoes",
+      "price": "36.95",
+      "images": [
+        "https://cdn.sklum.com/pt/wk/1607169/abajur-deyan.jpg?cf-resize=gallery",
+        "https://cdn.sklum.com/pt/wk/1607164/abajur-deyan.jpg?cf-resize=gallery",
+        "https://cdn.sklum.com/pt/wk/1607142/abajur-deyan.jpg?cf-resize=gallery",
+        "https://cdn.sklum.com/pt/wk/1607148/abajur-deyan.jpg?cf-resize=gallery"
+      ]
+    },
+    {
+      "id": 21,
+      "thumbnail": "https://www.worten.pt/i/4e06c7291c832b19790f1f66b45cbd5375a38720.jpg",
+      "title": "Destruidora de Papel",
+      "description": "Destruidora de papel que tritura documentos em pequenas partículas. Protege a privacidade e a segurança das informações.",
+      "category": "promocoes",
+      "price": "629.90",
+      "images": [
+        "https://www.worten.pt/i/4e06c7291c832b19790f1f66b45cbd5375a38720.jpg",
+        "https://www.worten.pt/i/6c49e7f0d60cb78f15f83b94c986318988b327a1.jpg",
+        "https://www.worten.pt/i/ea0dc1270c0eeb4a3736729d91c0f79677c3a221.jpg",
+        "https://www.worten.pt/i/cc8384fc5e939227691592317d8baf2b8f6e8f2a.jpg"
+      ]
+    },
+    {
+      "id": 22,
+      "thumbnail": "https://m.media-amazon.com/images/I/71S-pQNQyIL._AC_SL1500_.jpg",
+      "title": "Conj. de teclado + rato + fone",
+      "description": "Teclado e rato Gaming com 3 cores rotativas e modo de respiração, 4 cores circulares LED, 4 modos DPI ajustáveis: 1200, 1600, 2400, 3200.",
+      "category": "promocoes",
+      "price": "40.65",
+      "images": [
+        "https://m.media-amazon.com/images/I/71S-pQNQyIL._AC_SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/71aY4A38WSL._AC_SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/71pLlQy5HPL._AC_SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/61wyMzznhHL._AC_SL1500_.jpg"
+      ]
+    },
+    {
+      "id": 23,
+      "thumbnail": "https://d2r9epyceweg5n.cloudfront.net/stores/001/269/699/products/d_nq_np_2x_983269-mlb41296975371_032020-f1-cfb892f18645c57c2316072667863411-640-0.jpg",
+      "title": "Kit Teclado Iluminado BK",
+      "description": "Tenha um espaço mais amplo para jogar e se concentrar em suas partidas em qualquer game, com o teclado de mão única poderá jogar com mais conforto.",
+      "category": "promocoes",
+      "price": "19.45",
+      "images": [
+        "https://d2r9epyceweg5n.cloudfront.net/stores/001/269/699/products/d_nq_np_2x_983269-mlb41296975371_032020-f1-cfb892f18645c57c2316072667863411-640-0.jpg",
+        "https://d2r9epyceweg5n.cloudfront.net/stores/001/269/699/products/d_nq_np_2x_610281-mlb41296976379_032020-f1-bfdb752b01e381d75d16072667863694-640-0.jpg",
+        "https://d2r9epyceweg5n.cloudfront.net/stores/001/269/699/products/d_nq_np_2x_858887-mlb41296962708_032020-f1-3c26f91e793883c72516072667862338-640-0.jpg"
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Suporte para Notebook",
+      "description": "MacBook 12/13, MacBook Air 13, MacBook Pro 13/15 / 2018/2017/2016, Lenovo ThinkPad, DELL, HP, ASUS.",
+      "category": "promocoes",
+      "price": "28.75",
+      "images": [
+        "https://m.media-amazon.com/images/I/710xmJYyrCL._AC_SY450_.jpg",
+        "https://m.media-amazon.com/images/I/611eFs74xIL._AC_SY355_.jpg",
+        "https://m.media-amazon.com/images/I/712tl4jMXUL._AC_SY450_.jpg"
+      ]
+    }
+  ],
+  "total": 100,
+  "skip": 0,
+  "limit": 30
+}

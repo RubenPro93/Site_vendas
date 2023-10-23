@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/r.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!--link firebase -->
+  <!--importar esses links da minha firebase auth-->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <!-- (obrigatório para usar Firestore) -->
+  <script src="../login/firebase-init.js"></script>
+  <!--fim links firebase auth-->
+
+  <!--direcionamento para o js da pagina admin.html do login-->
+  <script src="../login/pages/home_2admin/home2.js"></script>
+
+
+
+  <title>REEX OFICCE - ADMIN</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="hide-content">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light cor-nav">
+      <!-- Logo da empresa, link para a página inicial -->
+      <a class="navbar-brand" href="#"><img src="img/Logo.png" alt="" width="50px"></a>
+      <!-- Botão para alternar o menu da barra de navegação em telas pequenas -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- Ícone do botão de alternância -->
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Itens da barra de navegação -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+          <!-- Link para a seção Home user -->
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <!-- Link para a seção About -->
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <!-- Link para a seção Contact -->
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+          <!-- Link para a seção Login -->
+          <li class="nav-item">
+            <a class="nav-link initially-hidden" id="login-link" href="../login/index.html">Login</a>
+          </li>
+
+          <!-- Link para a seção Home -->
+          <li class="nav-item">
+            <a class="nav-link" href="admin.html">Admin</a>
+          </li>
+
+        </ul>
+      </div>
+      <button type="button" class="clear botao-sair" id="logout-button" onclick="logout()"><i
+          class="fa-solid fa-right-from-bracket"></i></button>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-12 col-md-6 margin-div">
+        <label for="inputImagens" class="form-label">Imagens</label>
+        <input type="text" class="form-control" id="inputImagens" placeholder="Enter para enviar a foto"
+          onkeydown="addImage(event)">
+      </div>
+      <div class="col-12 col-md-6 margin-div">
+        <label for="inputTitle" class="form-label">Título</label>
+        <input type="text" class="form-control" id="inputTitle" maxlength="30" required>
+      </div>
+
+      <div class="col-12 col-md-6 margin-div">
+        <label for="inputDescription" class="form-label">Descrição</label>
+        <textarea class="form-control" id="inputDescription" maxlength="250" rows="3" required></textarea>
+      </div>
+
+      <div id="imageList"></div>
+
+      <div class="col-12 col-md-3 margin-div">
+        <label for="inputCategory" class="form-label">Categoria</label>
+        <select class="form-control" id="inputCategory">
+          <option value="suprimentos_de_escritorio">Suprimentos de Escritório</option>
+          <option value="moveis">Móveis</option>
+          <option value="eletronicos">Eletrônicos</option>
+          <option value="promocoes">Promoções</option>
+        </select>
+      </div>
+
+      <div class="col-12 col-md-3 margin-div">
+        <label for="inputPrice" class="form-label">Preço</label>
+        <input type="number" class="form-control" id="inputPrice" step="0.01">
+      </div>
+
+
+      <style>
+        body {
+          background-image: none;
+          background-color: rgb(255, 255, 255) !important;
+        }
+
+        .cor-nav {
+          background-color: black;
+        }
+
+        .nav-link {
+          color: white !important;
+        }
+
+        .margin-div {
+          margin-top: 20px;
+        }
+
+        #imageList {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-end;
+          flex-direction: row;
+        }
+
+        .imageList {
+          margin-top: 5px;
+          object-fit: cover;
+          background-color: white;
+          width: 85px;
+          height: 85px;
+          border: 1px black solid;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+
+        .imageItem {
+          margin-left: 5px;
+        }
+
+        .deleteButton {
+          transform: translateY(-29px);
+          width: 16px;
+          height: 17px;
+          padding: 0;
+          margin: 0px 0 0 -19px;
+          border: 0 none;
+          border-radius: 100%;
+          font-size: xx-small;
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+          color: rgb(255, 255, 255);
+          background-color: red;
+        }
+
+        .botao-todos {
+          width: 58px;
+          margin-top: 10px;
+        }
+
+        .divImg-adm {
+          object-fit: cover;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row;
+        }
+
+        .img-adm {
+          object-fit: cover;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-color: rgb(0, 0, 0);
+          width: 33px;
+          height: 35px;
+          border: 1px black solid;
+        }
+
+
+        .image-preview {
+          object-fit: cover;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-color: rgb(0, 0, 0);
+          width: 30px;
+          height: 30px;
+          border: 1px black solid;
+        }
+
+        .edit-preview {
+          display: flex;
+          flex-direction: row;
+        }
+
+
+
+        tr {
+          border: 2px solid #ececec;
+          margin-bottom: 10px;
+        }
+
+        @media screen and (min-width: 1200px) {
+          .botao-todos {
+            margin-left: 10px;
+          }
+
+          .img-adm {
+            width: calc(50% - 10px);
+            height: 70px;
+          }
+        }
+
+        @media screen and (max-width: 767px) {
+          .botao-todos {
+            margin-left: 10px;
+          }
+
+
+          table,
+          thead,
+          tbody,
+          th,
+          td,
+          tr {
+            display: block;
+          }
+
+          thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+          }
+
+          tr {
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+          }
+
+          td {
+            border: none;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 50%;
+          }
+
+          td::before {
+            content: attr(data-label);
+            float: left;
+            font-weight: bold;
+            margin-right: 100%;
+          }
+
+          .img-adm {
+            width: 48px;
+            height: 50px;
+          }
+
+          .edit-preview {
+            display: inherit;
+          }
+        }
+      </style>
+
+    </div>
+    <button type="button" class="btn btn-primary" onclick="clickAddMoveis()" style="float: right;">+ Add</button>
+
+    <br><br><br>
+    <div class="row">
+      <div class="col">
+        <table class="table">
+          <thead>
+            <tr>
+              <td data-label="Images" class="divImg-adm">Imagens</td>
+              <td data-label="Title">Título</td>
+              <td data-label="Description">Descrição</td>
+              <td data-label="Category">Categoria</td>
+              <td data-label="Price">Preço</td>
+              <td data-label="Actions">Modificação</td>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer mt-auto py-3 AdicionarCorFooter">
+    <div class="container">
+      <div class="row" style="align-items: center;">
+        <div class="col-md-4 justify-content-center" id="loja">
+          <h5>Loja</h5>
+          <p>
+            Endereço: Quinta da Marqueza - Palmela, Parque Industrial da Volkswagen Autoeuropa<br>
+            Codigo Postal: 2950-557
+          </p>
+        </div>
+        <div class="col-md-4" id="contacto">
+          <h5>Contacto</h5>
+          <p>
+            Telefone: (351) 123456789<br>
+            E-mail: faleconnosco@rexoffice.com<br>
+            Horário de funcionamento: Seg-Sex, 10h às 22h
+          </p>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+          <div class="rounded-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d779.7432139171924!2d-9.004531030163571!3d38.58047290000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194622e5ad46d1%3A0x123b3f86b5ed915a!2sATEC%20-%20Academia%20de%20Forma%C3%A7%C3%A3o%20-%20Palmela!5e0!3m2!1spt-BR!2spt!4v1681570855575!5m2!1spt-BR!2spt"
+              style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              width="200" height="120"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+
+  <script>
+    var listOfProducts = [];
+    let contador = 0;
+
+
+    var getProducts = function () {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          listOfProducts = JSON.parse(xhttp.responseText);
+          buildRows(listOfProducts)
+        }
+      };
+      xhttp.open("GET", "http://localhost:3000/products", true);
+      xhttp.send();
+    };
+
+    var clickAddMoveis = function () {
+      // Primeiro, vamos validar os inputs
+      var titleInput = document.getElementById('inputTitle');
+      var descriptionInput = document.getElementById('inputDescription');
+      var priceInput = document.getElementById('inputPrice');
+      var images = document.getElementsByClassName('imageList');
+
+      // Verifica se há pelo menos uma imagem
+      if (images.length === 0) {
+        alert('Você precisa adicionar pelo menos uma imagem.');
+        return;  // Encerra a execução da função aqui
+      }
+
+      // Verifica se o título foi inserido e tem menos de 25 caracteres
+      if (titleInput.value === "" || titleInput.value.length > 30) {
+        alert('O título é obrigatório e não pode ter mais de 30 caracteres.');
+        return;
+      }
+
+      // Verifica se a descrição foi inserida e tem menos de 500 caracteres
+      if (descriptionInput.value === "" || descriptionInput.value.length > 250) {
+        alert('A descrição é obrigatória e não pode ter mais de 250 caracteres.');
+        return;
+      }
+
+
+      // Verifica se o preço foi inserido
+      if (priceInput.value === "") {
+        alert('Você precisa inserir um preço.');
+        return;
+      }
+
+      // Encontra o maior ID existente
+      let maxId = Math.max(...listOfProducts.map(p => p.id));
+
+      if (maxId === -Infinity) {
+        maxId = 0;
+      }
+
+
+      // procurar a imagem com o menor ID e maior ID possivel
+      let imageElements = document.querySelectorAll("[id^='inputImages-']");
+      let minId = null; let maxId_image = null;
+
+      imageElements.forEach(element => {
+        let id = parseInt(element.id.replace("inputImages-", ""));
+        if (maxId_image === null || id > maxId_image) {
+          maxId_image = id;
+        }
+        if (minId === null || id < minId) {
+          minId = id;
+        }
+      });
+
+      let imageUrls = []; // Cria um array para armazenar todas as URLs de imagem
+
+      for (var i = 0; i <= maxId_image; i++) { // O loop fica ate a ultima imagem inserida
+        let imageUrl = document.getElementById("inputImages-" + i);
+        if (imageUrl && imageUrl.getAttribute("src")) { // Verifica se existe uma imagem, se foi excluida nao entra.
+          imageUrls.push(imageUrl.getAttribute("src")); // Adiciona a URL ao array
+        }
+      }
+
+
+
+
+      var newProduct = {
+        id: ++maxId, // Aqui está a geração do novo ID
+        thumbnail: document.getElementById("inputImages-" + minId).getAttribute("src"),
+        title: document.getElementById("inputTitle").value,
+        description: document.getElementById("inputDescription").value,
+        category: document.getElementById("inputCategory").value,
+        price: document.getElementById("inputPrice").value,
+        images: imageUrls
+      };
+
+      insertProduct(newProduct);
+    };
+
+
+    var insertProduct = function (product) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          let product = JSON.parse(xhttp.responseText);
+          buildNewRow(product)
+        }
+      };
+      xhttp.open("POST", "http://localhost:3000/addProduct", true);
+      xhttp.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+      xhttp.send(JSON.stringify(product));
+      contador = 0;
+    };
+
+    var clickDeleteProduct = function (id) {
+      var userConfirmation = confirm("Você tem certeza de que deseja deletar este produto?");
+      if (userConfirmation) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            // Remove a linha do produto da tabela do cliente
+            var rowToRemove = document.getElementById("product-id-" + id);
+            rowToRemove.parentNode.removeChild(rowToRemove);
+          }
+        };
+        xhttp.open("POST", "http://localhost:3000/deleteProduct", true);
+        xhttp.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+        xhttp.send(JSON.stringify({ id: id }));
+      } 
+    };
+
+
+    var buildNewRow = function (product) {
+      var rows = document.getElementsByTagName("tbody")[0].innerHTML ?? '';
+      var newRow = '';
+      newRow += '<tr>';
+
+      newRow += '<td data-label="Images" class="divImg-adm">';
+      // Percorrer todo o array de fotos
+      product.images.forEach(function (image) {
+        newRow += '<img class="img-adm" src="' + image + '">';
+      });
+      newRow += '</td>';
+
+      newRow += '<td data-label="Title">' + product.title + '</td>';
+      newRow += '<td data-label="Description">' + product.description + '</td>';
+      newRow += '<td data-label="Category">' + product.category + '</td>';
+      newRow += '<td data-label="Price">' + product.price + "€" + '</td>';
+      newRow += '<td data-label="Actions"> <button type="button" class="btn btn-danger btn-sm botao-delete" onclick="clickDeleteProduct(' + product.id + ')">x</button> </td>';
+      newRow += '</tr>';
+
+      document.getElementsByTagName("tbody")[0].innerHTML = rows + newRow;
+    }
+
+
+    var buildRows = function (prods) {
+      var rows = '';
+      for (let product of prods) {
+        rows += '<tr data-p-id="product-id-' + product.id + '" id="product-id-' + product.id + '">';
+
+        rows += '<td data-label="Images" class="divImg-adm">';
+        // Percorrer todo o array de fotos
+        product.images.forEach(function (image) {
+          rows += '<img class="img-adm" src="' + image + '">';
+        });
+        rows += '</td>';
+
+        rows += '<td data-label="Title">' + product.title + '</td>';
+        rows += '<td data-label="Description">' + product.description + '</td>';
+        rows += '<td data-label="Category">' + product.category + '</td>';
+        rows += '<td data-label="Price">' + product.price + "€" + '</td>';
+        rows += '<td data-label="Actions"> <button type="button" class="btn btn-danger btn-sm botao-todos" onclick="clickDeleteProduct(' + product.id + ')">Excluir</button>';
+        rows += '<button type="button" class="btn btn-primary btn-sm botao-todos" onclick="clickEditProduct(' + product.id + ')">Editar</button> </td>';
+        rows += '</tr>';
+      }
+
+      document.getElementsByTagName("tbody")[0].innerHTML = rows;
+    };
+
+    var clickEditProduct = function (id) {
+      let product = listOfProducts.find(i => i.id === id);
+
+      let editRow = '';
+
+      editRow += '<td data-label="Images">';
+      for (var i = 0; i < 4; i++) {
+        let imgSrc = product.images[i] || '';
+        editRow += `<div class="edit-preview"><img src="${imgSrc}" class="image-preview" id="image-preview-${i}">`;
+        editRow += `<input type="text" class="imageEdit" id="edit-images-${i}" value="${imgSrc}" onchange="updateImagePreview(${i})"></div>`;
+      }
+      editRow += '</td>';
+
+      editRow += '<td data-label="Title"> <input type="text" id="edit-title" maxlength="25" required value="' + product.title + '"></td>';
+      editRow += '<td data-label="Description"> <textarea type="text" id="edit-description" maxlength="250" rows="3" required value="' + product.description + '">' + product.description + '</textarea></td>';
+      editRow += '<td data-label="Category"> <select type="text" id="edit-category">'
+      editRow += ' <option disabled selected style="display:none;">' + product.category + '</option>'
+      editRow += ' <option value="suprimentos_de_escritorio">suprimentos_de_escritorio</option>'
+      editRow += ' <option value="moveis">Móveis</option>'
+      editRow += ' <option value="eletronicos">Eletrônicos</option>'
+      editRow += ' <option value="promocoes">Promoções</option>'
+      editRow += '</select>'
+      editRow += '</td>';
+
+      editRow += '<td data-label="Price"> <input type="number" id="edit-price" value="' + product.price + '"></td>';
+      editRow += '<td data-label="Actions"> <button type="button" class="btn btn-danger btn-sm botao-todos" onclick="cancelUpdate(' + product.id + ')">Cancelar</button>';
+      editRow += '<button type="button" class="btn btn-success btn-sm botao-todos" onclick="clickUpdateProduct(' + product.id + ')">Alterar</button> </td>';
+
+      document.querySelector('[data-p-id="product-id-' + product.id + '"]').innerHTML = editRow;
+    };
+
+
+    var clickUpdateProduct = function (id) {
+
+      var edittitle = document.getElementById('edit-title');
+      var editdescription = document.getElementById('edit-description');
+      var editprice = document.getElementById('edit-price');
+
+      if (edittitle.value === "" || edittitle.value.length > 30) {
+        alert('O título é obrigatório e não pode ter mais de 30 caracteres.');
+        return;
+      }
+      if (editdescription.value === "" || editdescription.value.length > 250) {
+        alert('A descrição é obrigatória e não pode ter mais de 250 caracteres.');
+        return;
+      }
+
+      // Verifica se o preço foi inserido
+      if (editprice.value === "") {
+        alert('Você precisa inserir um preço.');
+        return;
+      }
+
+      let imageUrls = []; // Cria um array para armazenar todas as URLs de imagem
+
+      for (var i = 0; i < 4; i++) { // O loop fica ate a ultima imagem inserida
+        let imageUrl = document.getElementById("edit-images-" + i);
+        if (imageUrl.value) { // Verifica se existe uma imagem, se foi excluida nao entra.
+          imageUrls.push(imageUrl.value);  // Adiciona a URL ao array
+        }
+      }
+
+      let product = {
+        id: id,
+        title: document.getElementById("edit-title").value,
+        description: document.getElementById("edit-description").value,
+        category: document.getElementById("edit-category").value,
+        price: document.getElementById("edit-price").value,
+        images: imageUrls
+      };
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          let updatedProduct = JSON.parse(xhttp.responseText);
+          var updatedRow = '';
+
+          updatedRow += '<td class="divImg-adm">';
+          // Percorrer todo o array de fotos
+          updatedProduct.images.forEach(function (image) {
+            updatedRow += '<img class="img-adm" src="' + image + '">';
+          });
+          updatedRow += '</td>';
+
+
+          updatedRow += '<td>' + updatedProduct.title + '</td>';
+          updatedRow += '<td>' + updatedProduct.description + '</td>';
+          updatedRow += '<td>' + updatedProduct.category + '</td>';
+          updatedRow += '<td>' + updatedProduct.price + '</td>';
+          updatedRow += '<td> <button type="button" class="btn btn-danger btn-sm" onclick="clickDeleteProduct(' + updatedProduct.id + ')">Cancelar</button>';
+          updatedRow += '<button type="button" class="btn btn-primary btn-sm" onclick="clickEditProduct(' + updatedProduct.id + ')">Alterar</button> </td>';
+          document.querySelector('[data-p-id="product-id-' + updatedProduct.id + '"]').innerHTML = updatedRow;
+        }
+      };
+      xhttp.open("POST", "http://localhost:3000/updateProduct", true);
+      xhttp.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+      xhttp.send(JSON.stringify(product));
+    };
+
+    var cancelUpdate = function (id) {
+      let product = listOfProducts.find(i => i.id === id);
+      var row = '';
+
+      row += '<td data-label="Images" class="divImg-adm">';
+      // Percorrer todo o array de fotos
+      product.images.forEach(function (image) {
+        row += '<img class="img-adm" src="' + image + '">';
+      });
+      row += '</td>';
+
+      row += '<td data-label="Title">' + product.title + '</td>';
+      row += '<td data-label="Description">' + product.description + '</td>';
+      row += '<td data-label="Category">' + product.category + '</td>';
+      row += '<td data-label="Price">' + product.price + '</td>';
+      row += '<td data-label="Actions"> <button type="button" class="btn btn-danger btn-sm botao-todos" onclick="clickDeleteProduct(' + product.id + ')">Excluir</button>';
+      row += '<button type="button" class="btn btn-primary btn-sm botao-todos" onclick="clickEditProduct(' + product.id + ')">Editar</button> </td>';
+      document.querySelector('[data-p-id="product-id-' + product.id + '"]').innerHTML = row;
+    };
+
+    // Adiciona um evento para quando o DOM estiver completamente carregado
+    document.addEventListener("DOMContentLoaded", () => {
+      // Chama a função para obter os produtos
+      getProducts();
+    });
+
+
+
+
+
+
+
+    //imagens miniatura, no upload
+    function updateImagePreview(index) {
+      let imageUrl = document.getElementById('edit-images-' + index).value;
+      let imgElement = document.getElementById('image-preview-' + index);
+      imgElement.src = imageUrl;
+    }
+
+
+    //// Adicionar imagens, comeco do site --->>>>>
+
+    function addImage(event) {
+
+      if (event.keyCode === 13) { // verifica se a tecla pressionada é Enter
+        event.preventDefault(); // impede o comportamento padrão de inserir uma nova linha
+
+        var existingImages = document.getElementsByClassName('imageList').length;
+        if (existingImages < 4) {
+
+          // Conta as imagens inseridas
+          ++contador;
+
+          var imagesInput = document.getElementById("inputImagens");
+          var imageList = document.getElementById("imageList");
+          //adiciona class a div, colocando altura e etc (css)
+          imageList.className = "col-12 col-md-6 margin-div";
+
+          var imageContainer = document.createElement("div");
+          imageContainer.className = "imageItem";
+
+          var image = document.createElement("img");
+          image.className = "imageList inputImages-" + contador;
+          image.id = "inputImages-" + contador;
+          image.src = imagesInput.value.trim();
+          imageContainer.appendChild(image);
+
+          var deleteButton = document.createElement("button");
+          deleteButton.className = "deleteButton";
+          deleteButton.innerHTML = "X";
+          deleteButton.addEventListener("click", function () {
+            imageContainer.remove();
+
+            // caso nao tenha foto, a div fica sem tamanho
+            var existingImages = document.getElementsByClassName('imageList').length;
+            if (existingImages === 0) {
+              imageList.className = "";
+            }
+          });
+          imageContainer.appendChild(deleteButton);
+
+          imageList.appendChild(imageContainer);
+
+          imagesInput.value = ""; // Limpa o campo de entrada
+        } else {
+          alert('Você só pode adicionar até 4 imagens.'); // mostra um alerta se tentar adicionar mais de 4 imagens
+        }
+
+      }
+    }
+
+
+  </script>
+
+
+
+</body>
+
+</html>
